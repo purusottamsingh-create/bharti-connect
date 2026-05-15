@@ -1,0 +1,368 @@
+{
+  "9876543210": [
+    {
+      "date": "2026-05-01",
+      "data_used_gb": 1.4,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 45,
+      "sms_count": 2
+    },
+    {
+      "date": "2026-05-02",
+      "data_used_gb": 0.9,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 30,
+      "sms_count": 1
+    },
+    {
+      "date": "2026-05-03",
+      "data_used_gb": 1.1,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 55,
+      "sms_count": 4
+    },
+    {
+      "date": "2026-05-04",
+      "data_used_gb": 1.7,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 38,
+      "sms_count": 0
+    },
+    {
+      "date": "2026-05-05",
+      "data_used_gb": 0.5,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 20,
+      "sms_count": 3
+    },
+    {
+      "date": "2026-05-06",
+      "data_used_gb": 1.9,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 90,
+      "sms_count": 6
+    },
+    {
+      "date": "2026-05-07",
+      "data_used_gb": 1.2,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 60,
+      "sms_count": 2
+    },
+    {
+      "date": "2026-05-08",
+      "data_used_gb": 0.8,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 25,
+      "sms_count": 1
+    },
+    {
+      "date": "2026-05-09",
+      "data_used_gb": 1.5,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 70,
+      "sms_count": 5
+    },
+    {
+      "date": "2026-05-10",
+      "data_used_gb": 1.8,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 50,
+      "sms_count": 2
+    },
+    {
+      "date": "2026-05-11",
+      "data_used_gb": 4.2,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 2.2,
+      "calls_minutes": 84,
+      "sms_count": 5
+    },
+    {
+      "date": "2026-05-12",
+      "data_used_gb": 3.6,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 1.6,
+      "calls_minutes": 112,
+      "sms_count": 3
+    },
+    {
+      "date": "2026-05-13",
+      "data_used_gb": 1.8,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 67,
+      "sms_count": 8
+    },
+    {
+      "date": "2026-05-14",
+      "data_used_gb": 1.3,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 40,
+      "sms_count": 1
+    },
+    {
+      "date": "2026-05-15",
+      "data_used_gb": 0.7,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 33,
+      "sms_count": 2
+    }
+  ],
+  "7406179387": [
+    {
+      "date": "2026-05-01",
+      "data_used_gb": 1.4,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 45,
+      "sms_count": 2
+    },
+    {
+      "date": "2026-05-02",
+      "data_used_gb": 0.9,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 30,
+      "sms_count": 1
+    },
+    {
+      "date": "2026-05-03",
+      "data_used_gb": 1.1,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 55,
+      "sms_count": 4
+    },
+    {
+      "date": "2026-05-04",
+      "data_used_gb": 1.7,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 38,
+      "sms_count": 0
+    },
+    {
+      "date": "2026-05-05",
+      "data_used_gb": 0.5,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 20,
+      "sms_count": 3
+    },
+    {
+      "date": "2026-05-06",
+      "data_used_gb": 1.9,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 90,
+      "sms_count": 6
+    },
+    {
+      "date": "2026-05-07",
+      "data_used_gb": 1.2,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 60,
+      "sms_count": 2
+    },
+    {
+      "date": "2026-05-08",
+      "data_used_gb": 0.8,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 25,
+      "sms_count": 1
+    },
+    {
+      "date": "2026-05-09",
+      "data_used_gb": 1.5,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 70,
+      "sms_count": 5
+    },
+    {
+      "date": "2026-05-10",
+      "data_used_gb": 1.8,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 50,
+      "sms_count": 2
+    },
+    {
+      "date": "2026-05-11",
+      "data_used_gb": 4.2,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 2.2,
+      "calls_minutes": 84,
+      "sms_count": 5
+    },
+    {
+      "date": "2026-05-12",
+      "data_used_gb": 3.6,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 1.6,
+      "calls_minutes": 112,
+      "sms_count": 3
+    },
+    {
+      "date": "2026-05-13",
+      "data_used_gb": 1.8,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 67,
+      "sms_count": 8
+    },
+    {
+      "date": "2026-05-14",
+      "data_used_gb": 1.3,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 40,
+      "sms_count": 1
+    },
+    {
+      "date": "2026-05-15",
+      "data_used_gb": 0.7,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 33,
+      "sms_count": 2
+    }
+  ],
+  "9858509904": [
+    {
+      "date": "2026-05-01",
+      "data_used_gb": 1.4,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 45,
+      "sms_count": 2
+    },
+    {
+      "date": "2026-05-02",
+      "data_used_gb": 0.9,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 30,
+      "sms_count": 1
+    },
+    {
+      "date": "2026-05-03",
+      "data_used_gb": 1.1,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 55,
+      "sms_count": 4
+    },
+    {
+      "date": "2026-05-04",
+      "data_used_gb": 1.7,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 38,
+      "sms_count": 0
+    },
+    {
+      "date": "2026-05-05",
+      "data_used_gb": 0.5,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 20,
+      "sms_count": 3
+    },
+    {
+      "date": "2026-05-06",
+      "data_used_gb": 1.9,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 90,
+      "sms_count": 6
+    },
+    {
+      "date": "2026-05-07",
+      "data_used_gb": 1.2,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 60,
+      "sms_count": 2
+    },
+    {
+      "date": "2026-05-08",
+      "data_used_gb": 0.8,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 25,
+      "sms_count": 1
+    },
+    {
+      "date": "2026-05-09",
+      "data_used_gb": 1.5,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 70,
+      "sms_count": 5
+    },
+    {
+      "date": "2026-05-10",
+      "data_used_gb": 1.8,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 50,
+      "sms_count": 2
+    },
+    {
+      "date": "2026-05-11",
+      "data_used_gb": 4.2,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 2.2,
+      "calls_minutes": 84,
+      "sms_count": 5
+    },
+    {
+      "date": "2026-05-12",
+      "data_used_gb": 3.6,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 1.6,
+      "calls_minutes": 112,
+      "sms_count": 3
+    },
+    {
+      "date": "2026-05-13",
+      "data_used_gb": 1.8,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 67,
+      "sms_count": 8
+    },
+    {
+      "date": "2026-05-14",
+      "data_used_gb": 1.3,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 40,
+      "sms_count": 1
+    },
+    {
+      "date": "2026-05-15",
+      "data_used_gb": 0.7,
+      "daily_limit_gb": 2.0,
+      "excess_gb": 0,
+      "calls_minutes": 33,
+      "sms_count": 2
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "ticket_id": "BTC-88101",
+    "created_at": "2026-05-14T10:30:00Z",
+    "mobile_number": "9876543210",
+    "type": "billing_dispute",
+    "issue_summary": "Excess data charge inquiry for May 12.",
+    "root_cause": "customer_unaware_of_usage",
+    "action_taken": "Explained 5G usage consumption. Customer satisfied.",
+    "credit_amount": 0.0,
+    "credit_id": null,
+    "priority": "low",
+    "resolution_status": "resolved",
+    "raised_by": "aarav_billing_agent"
+  },
+  {
+    "ticket_id": "BTC-88102",
+    "created_at": "2026-05-15T09:15:00Z",
+    "mobile_number": "7406179387",
+    "type": "service_request",
+    "issue_summary": "International roaming pack not working in Singapore.",
+    "root_cause": "network_handshake_delay",
+    "action_taken": "Manual network refresh pushed to SIM. Roaming active now.",
+    "credit_amount": 0.0,
+    "credit_id": null,
+    "priority": "high",
+    "resolution_status": "resolved",
+    "raised_by": "manual_support"
+  }
+]

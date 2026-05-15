@@ -1,0 +1,62 @@
+{
+  "9876543210": [
+    {
+      "event_id": "EVT-9921",
+      "service": "SAARC roaming pack",
+      "action": "activated",
+      "triggered_by": "system_auto",
+      "timestamp": "2026-05-14T09:32:11Z",
+      "channel": "automated_rule",
+      "customer_initiated": false
+    },
+    {
+      "event_id": "EVT-9890",
+      "service": "Monthly plan — ₹699",
+      "action": "renewed",
+      "triggered_by": "customer",
+      "timestamp": "2026-05-01T00:00:00Z",
+      "channel": "self_service_app",
+      "customer_initiated": true
+    }
+  ],
+  "7406179387": [
+    {
+      "event_id": "EVT-9921",
+      "service": "SAARC roaming pack",
+      "action": "activated",
+      "triggered_by": "system_auto",
+      "timestamp": "2026-05-14T09:32:11Z",
+      "channel": "automated_rule",
+      "customer_initiated": false
+    },
+    {
+      "event_id": "EVT-9890",
+      "service": "Monthly plan — ₹699",
+      "action": "renewed",
+      "triggered_by": "customer",
+      "timestamp": "2026-05-01T00:00:00Z",
+      "channel": "self_service_app",
+      "customer_initiated": true
+    }
+  ],
+  "9858509904": [
+    {
+      "event_id": "EVT-9921",
+      "service": "SAARC roaming pack",
+      "action": "activated",
+      "triggered_by": "system_auto",
+      "timestamp": "2026-05-14T09:32:11Z",
+      "channel": "automated_rule",
+      "customer_initiated": false
+    },
+    {
+      "event_id": "EVT-9890",
+      "service": "Monthly plan — ₹699",
+      "action": "renewed",
+      "triggered_by": "customer",
+      "timestamp": "2026-05-01T00:00:00Z",
+      "channel": "self_service_app",
+      "customer_initiated": true
+    }
+  ]
+}

@@ -1,0 +1,620 @@
+{
+  "9876543210": [
+    {
+      "invoice_id": "INV-20261101",
+      "billing_period": "01 May 2026 – 30 May 2026",
+      "due_date": "2026-06-04",
+      "total_amount": 1249,
+      "status": "unpaid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        },
+        {
+          "description": "SAARC roaming pack — 14 days",
+          "amount": 299,
+          "type": "addon_charge",
+          "activated_on": "2026-05-14"
+        },
+        {
+          "description": "Excess data — 8.4 GB beyond daily limit",
+          "amount": 251,
+          "type": "excess_usage",
+          "usage_dates": [
+            "2024-11-11",
+            "2024-11-12"
+          ]
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20261001",
+      "billing_period": "31 Mar 2026 – 30 Apr 2026",
+      "due_date": "2026-05-05",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260901",
+      "billing_period": "01 Mar 2026 – 30 Mar 2026",
+      "due_date": "2026-04-04",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260801",
+      "billing_period": "29 Jan 2026 – 28 Feb 2026",
+      "due_date": "2026-03-05",
+      "total_amount": 999,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        },
+        {
+          "description": "International roaming pack — 7 days",
+          "amount": 300,
+          "type": "addon_charge",
+          "activated_on": "2026-02-07"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260701",
+      "billing_period": "29 Dec 2025 – 28 Jan 2026",
+      "due_date": "2026-02-02",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260601",
+      "billing_period": "29 Nov 2025 – 28 Dec 2025",
+      "due_date": "2026-01-02",
+      "total_amount": 823,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        },
+        {
+          "description": "Excess data — 3.1 GB beyond daily limit",
+          "amount": 124,
+          "type": "excess_usage",
+          "usage_dates": [
+            "2024-06-18",
+            "2024-06-19"
+          ]
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260501",
+      "billing_period": "29 Oct 2025 – 28 Nov 2025",
+      "due_date": "2025-12-03",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260401",
+      "billing_period": "29 Sep 2025 – 28 Oct 2025",
+      "due_date": "2025-11-02",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260301",
+      "billing_period": "29 Aug 2025 – 28 Sep 2025",
+      "due_date": "2025-10-03",
+      "total_amount": 1098,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        },
+        {
+          "description": "Premium OTT bundle — 1 month",
+          "amount": 399,
+          "type": "addon_charge",
+          "activated_on": "2025-08-29"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260201",
+      "billing_period": "31 Jul 2025 – 28 Aug 2025",
+      "due_date": "2025-09-02",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260101",
+      "billing_period": "30 Jun 2025 – 30 Jul 2025",
+      "due_date": "2025-08-04",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20231201",
+      "billing_period": "30 May 2025 – 29 Jun 2025",
+      "due_date": "2025-07-04",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    }
+  ],
+  "7406179387": [
+    {
+      "invoice_id": "INV-20261101",
+      "billing_period": "01 May 2026 – 30 May 2026",
+      "due_date": "2026-06-04",
+      "total_amount": 1249,
+      "status": "unpaid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        },
+        {
+          "description": "SAARC roaming pack — 14 days",
+          "amount": 299,
+          "type": "addon_charge",
+          "activated_on": "2026-05-14"
+        },
+        {
+          "description": "Excess data — 8.4 GB beyond daily limit",
+          "amount": 251,
+          "type": "excess_usage",
+          "usage_dates": [
+            "2024-11-11",
+            "2024-11-12"
+          ]
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20261001",
+      "billing_period": "31 Mar 2026 – 30 Apr 2026",
+      "due_date": "2026-05-05",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260901",
+      "billing_period": "01 Mar 2026 – 30 Mar 2026",
+      "due_date": "2026-04-04",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260801",
+      "billing_period": "29 Jan 2026 – 28 Feb 2026",
+      "due_date": "2026-03-05",
+      "total_amount": 999,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        },
+        {
+          "description": "International roaming pack — 7 days",
+          "amount": 300,
+          "type": "addon_charge",
+          "activated_on": "2026-02-07"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260701",
+      "billing_period": "29 Dec 2025 – 28 Jan 2026",
+      "due_date": "2026-02-02",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260601",
+      "billing_period": "29 Nov 2025 – 28 Dec 2025",
+      "due_date": "2026-01-02",
+      "total_amount": 823,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        },
+        {
+          "description": "Excess data — 3.1 GB beyond daily limit",
+          "amount": 124,
+          "type": "excess_usage",
+          "usage_dates": [
+            "2024-06-18",
+            "2024-06-19"
+          ]
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260501",
+      "billing_period": "29 Oct 2025 – 28 Nov 2025",
+      "due_date": "2025-12-03",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260401",
+      "billing_period": "29 Sep 2025 – 28 Oct 2025",
+      "due_date": "2025-11-02",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260301",
+      "billing_period": "29 Aug 2025 – 28 Sep 2025",
+      "due_date": "2025-10-03",
+      "total_amount": 1098,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        },
+        {
+          "description": "Premium OTT bundle — 1 month",
+          "amount": 399,
+          "type": "addon_charge",
+          "activated_on": "2025-08-29"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260201",
+      "billing_period": "31 Jul 2025 – 28 Aug 2025",
+      "due_date": "2025-09-02",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260101",
+      "billing_period": "30 Jun 2025 – 30 Jul 2025",
+      "due_date": "2025-08-04",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20231201",
+      "billing_period": "30 May 2025 – 29 Jun 2025",
+      "due_date": "2025-07-04",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    }
+  ],
+  "9858509904": [
+    {
+      "invoice_id": "INV-20261101",
+      "billing_period": "01 May 2026 – 30 May 2026",
+      "due_date": "2026-06-04",
+      "total_amount": 1249,
+      "status": "unpaid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        },
+        {
+          "description": "SAARC roaming pack — 14 days",
+          "amount": 299,
+          "type": "addon_charge",
+          "activated_on": "2026-05-14"
+        },
+        {
+          "description": "Excess data — 8.4 GB beyond daily limit",
+          "amount": 251,
+          "type": "excess_usage",
+          "usage_dates": [
+            "2024-11-11",
+            "2024-11-12"
+          ]
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20261001",
+      "billing_period": "31 Mar 2026 – 30 Apr 2026",
+      "due_date": "2026-05-05",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260901",
+      "billing_period": "01 Mar 2026 – 30 Mar 2026",
+      "due_date": "2026-04-04",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260801",
+      "billing_period": "29 Jan 2026 – 28 Feb 2026",
+      "due_date": "2026-03-05",
+      "total_amount": 999,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        },
+        {
+          "description": "International roaming pack — 7 days",
+          "amount": 300,
+          "type": "addon_charge",
+          "activated_on": "2026-02-07"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260701",
+      "billing_period": "29 Dec 2025 – 28 Jan 2026",
+      "due_date": "2026-02-02",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260601",
+      "billing_period": "29 Nov 2025 – 28 Dec 2025",
+      "due_date": "2026-01-02",
+      "total_amount": 823,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        },
+        {
+          "description": "Excess data — 3.1 GB beyond daily limit",
+          "amount": 124,
+          "type": "excess_usage",
+          "usage_dates": [
+            "2024-06-18",
+            "2024-06-19"
+          ]
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260501",
+      "billing_period": "29 Oct 2025 – 28 Nov 2025",
+      "due_date": "2025-12-03",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260401",
+      "billing_period": "29 Sep 2025 – 28 Oct 2025",
+      "due_date": "2025-11-02",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260301",
+      "billing_period": "29 Aug 2025 – 28 Sep 2025",
+      "due_date": "2025-10-03",
+      "total_amount": 1098,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        },
+        {
+          "description": "Premium OTT bundle — 1 month",
+          "amount": 399,
+          "type": "addon_charge",
+          "activated_on": "2025-08-29"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260201",
+      "billing_period": "31 Jul 2025 – 28 Aug 2025",
+      "due_date": "2025-09-02",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20260101",
+      "billing_period": "30 Jun 2025 – 30 Jul 2025",
+      "due_date": "2025-08-04",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-20231201",
+      "billing_period": "30 May 2025 – 29 Jun 2025",
+      "due_date": "2025-07-04",
+      "total_amount": 699,
+      "status": "paid",
+      "line_items": [
+        {
+          "description": "Monthly plan — ₹699 postpaid",
+          "amount": 699,
+          "type": "plan_charge"
+        }
+      ]
+    }
+  ]
+}
