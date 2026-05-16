@@ -1,0 +1,68 @@
+{
+  "9876543210": [
+    {
+      "month": "May 2026",
+      "base_recharge_rs": 699,
+      "base_plan": "Rs 699 Postpaid Premium",
+      "excess_charges_rs": 0,
+      "total_spend_rs": 699,
+      "next_recharge_due": "2026-06-04",
+      "recharge_consistency": "regular",
+      "total_top_up_spend_rs": 0
+    },
+    {
+      "month": "April 2026",
+      "base_recharge_rs": 699,
+      "base_plan": "Rs 699 Postpaid Premium",
+      "excess_charges_rs": 0,
+      "total_spend_rs": 699,
+      "next_recharge_due": "2026-06-04",
+      "recharge_consistency": "regular",
+      "total_top_up_spend_rs": 0
+    }
+  ],
+  "7406179387": [
+    {
+      "month": "May 2026",
+      "base_recharge_rs": 699,
+      "base_plan": "Rs 699 Postpaid Premium",
+      "excess_charges_rs": 550,
+      "total_spend_rs": 1249,
+      "next_recharge_due": "2026-06-04",
+      "recharge_consistency": "regular",
+      "total_top_up_spend_rs": 550
+    },
+    {
+      "month": "April 2026",
+      "base_recharge_rs": 699,
+      "base_plan": "Rs 699 Postpaid Premium",
+      "excess_charges_rs": 480,
+      "total_spend_rs": 1179,
+      "next_recharge_due": "2026-06-04",
+      "recharge_consistency": "regular",
+      "total_top_up_spend_rs": 480
+    },
+    {
+      "month": "March 2026",
+      "base_recharge_rs": 699,
+      "base_plan": "Rs 699 Postpaid Premium",
+      "excess_charges_rs": 420,
+      "total_spend_rs": 1119,
+      "next_recharge_due": "2026-06-04",
+      "recharge_consistency": "regular",
+      "total_top_up_spend_rs": 420
+    }
+  ],
+  "9858509904": [
+    {
+      "month": "May 2026",
+      "base_recharge_rs": 499,
+      "base_plan": "Rs 499 Postpaid",
+      "excess_charges_rs": 0,
+      "total_spend_rs": 499,
+      "next_recharge_due": "2026-06-04",
+      "recharge_consistency": "regular",
+      "total_top_up_spend_rs": 0
+    }
+  ]
+}

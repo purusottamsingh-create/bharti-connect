@@ -1,0 +1,44 @@
+{
+  "7406179387": {
+    "customer_name": "Purusottam Singh",
+    "plan_id": "PLN-POSTPAID-699",
+    "plan_name": "Rs 699 Postpaid Premium",
+    "plan_type": "postpaid",
+    "price_rs": 699,
+    "data_per_month_gb": 125,
+    "calls": "Unlimited to all networks",
+    "sms_per_month": 100,
+    "billing_date": 4,
+    "circle": "Karnataka",
+    "5g_enabled": true,
+    "international_roaming": false
+  },
+  "9858509904": {
+    "customer_name": "Madhukar Rao",
+    "plan_id": "PLN-POSTPAID-499",
+    "plan_name": "Rs 499 Postpaid",
+    "plan_type": "postpaid",
+    "price_rs": 499,
+    "data_per_month_gb": 75,
+    "calls": "Unlimited to all networks",
+    "sms_per_month": 100,
+    "billing_date": 4,
+    "circle": "Delhi",
+    "5g_enabled": true,
+    "international_roaming": false
+  },
+  "9876543210": {
+    "customer_name": "Kavitha Nair",
+    "plan_id": "PLN-POSTPAID-699",
+    "plan_name": "Rs 699 Postpaid Premium",
+    "plan_type": "postpaid",
+    "price_rs": 699,
+    "data_per_month_gb": 125,
+    "calls": "Unlimited to all networks",
+    "sms_per_month": 100,
+    "billing_date": 4,
+    "circle": "Maharashtra",
+    "5g_enabled": true,
+    "international_roaming": false
+  }
+}

@@ -108,34 +108,38 @@ def get_account_plan(mobile_number: str):
 @router.get("/{mobile_number}/usage", summary="get_usage_history")
 def get_usage_history(
     mobile_number: str,
-    from_date: str = Query(..., description="Start date of usage period. Format: YYYY-MM-DD"),
-    to_date: str = Query(..., description="End date of usage period. Format: YYYY-MM-DD"),
+    months: int = Query(3, description="Number of months to retrieve usage for (defaults to 3)"),
 ):
     data = _read("usage_history.json")
     all_usage = data.get(mobile_number)
     if all_usage is None:
         raise HTTPException(status_code=404, detail=f"No usage data found for mobile_number {mobile_number}")
 
-    # Filter by date range
-    filtered = [
-        day for day in all_usage
-        if from_date <= day["date"] <= to_date
-    ]
+    # For this demo, we'll sort the usage and return the most recent N records 
+    # (In a real system, we would group by calendar months. 
+    # Here, we'll simply return the most recent data available.)
+    all_usage.sort(key=lambda x: x["date"], reverse=True)
+    
+    # Simple logic: assume ~30 records per month for the demo, 
+    # or just return the whole list if it's small (which our seed data is).
+    # Since our demo data is limited, we will return the available records 
+    # and adjust the "usage_period" description accordingly.
+    
+    # Filter for demo purposes: just show the data we have, capped at a reasonable limit
+    filtered = all_usage[:months * 31]
+    filtered.sort(key=lambda x: x["date"]) # Sort back to chronological for the response
 
     # Compute summary dynamically from filtered results
-    total_data = round(sum(d["data_used_gb"] for d in filtered), 2)
-    total_excess = round(sum(d["excess_gb"] for d in filtered), 2)
-    total_calls = sum(d["calls_minutes"] for d in filtered)
-    total_sms = sum(d["sms_count"] for d in filtered)
-    days_exceeded = sum(1 for d in filtered if d["excess_gb"] > 0)
+    total_data = round(sum(d.get("data_used_gb", 0) for d in filtered), 2)
+    total_excess = round(sum(d.get("excess_gb", 0) for d in filtered), 2)
+    total_calls = sum(d.get("calls_minutes", 0) for d in filtered)
+    total_sms = sum(d.get("sms_count", 0) for d in filtered)
+    days_exceeded = sum(1 for d in filtered if d.get("excess_gb", 0) > 0)
 
     return {
         "status": "success",
         "mobile_number": mobile_number,
-        "usage_period": {
-            "from_date": from_date,
-            "to_date": to_date,
-        },
+        "months_analysed": months,
         "daily_usage": filtered,
         "summary": {
             "total_data_used_gb": total_data,

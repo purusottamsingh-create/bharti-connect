@@ -1,0 +1,140 @@
+[
+  {
+    "plan_id": "PLN-POSTPAID-499",
+    "plan_name": "Rs 499 Postpaid",
+    "plan_type": "postpaid",
+    "price_rs": 499,
+    "data_per_month_gb": 75,
+    "calls": "Unlimited to all networks",
+    "sms_per_month": 100,
+    "5g_enabled": true,
+    "international_roaming": false,
+    "extras": [],
+    "circle": "Maharashtra"
+  },
+  {
+    "plan_id": "PLN-POSTPAID-499",
+    "plan_name": "Rs 499 Postpaid",
+    "plan_type": "postpaid",
+    "price_rs": 499,
+    "data_per_month_gb": 75,
+    "calls": "Unlimited to all networks",
+    "sms_per_month": 100,
+    "5g_enabled": true,
+    "international_roaming": false,
+    "extras": [],
+    "circle": "Karnataka"
+  },
+  {
+    "plan_id": "PLN-POSTPAID-499",
+    "plan_name": "Rs 499 Postpaid",
+    "plan_type": "postpaid",
+    "price_rs": 499,
+    "data_per_month_gb": 75,
+    "calls": "Unlimited to all networks",
+    "sms_per_month": 100,
+    "5g_enabled": true,
+    "international_roaming": false,
+    "extras": [],
+    "circle": "Delhi"
+  },
+  {
+    "plan_id": "PLN-POSTPAID-699",
+    "plan_name": "Rs 699 Postpaid Premium",
+    "plan_type": "postpaid",
+    "price_rs": 699,
+    "data_per_month_gb": 125,
+    "calls": "Unlimited to all networks",
+    "sms_per_month": 100,
+    "5g_enabled": true,
+    "international_roaming": false,
+    "extras": [
+      "Bharti Connect TV",
+      "1 OTT subscription"
+    ],
+    "circle": "Maharashtra"
+  },
+  {
+    "plan_id": "PLN-POSTPAID-699",
+    "plan_name": "Rs 699 Postpaid Premium",
+    "plan_type": "postpaid",
+    "price_rs": 699,
+    "data_per_month_gb": 125,
+    "calls": "Unlimited to all networks",
+    "sms_per_month": 100,
+    "5g_enabled": true,
+    "international_roaming": false,
+    "extras": [
+      "Bharti Connect TV",
+      "1 OTT subscription"
+    ],
+    "circle": "Karnataka"
+  },
+  {
+    "plan_id": "PLN-POSTPAID-699",
+    "plan_name": "Rs 699 Postpaid Premium",
+    "plan_type": "postpaid",
+    "price_rs": 699,
+    "data_per_month_gb": 125,
+    "calls": "Unlimited to all networks",
+    "sms_per_month": 100,
+    "5g_enabled": true,
+    "international_roaming": false,
+    "extras": [
+      "Bharti Connect TV",
+      "1 OTT subscription"
+    ],
+    "circle": "Delhi"
+  },
+  {
+    "plan_id": "PLN-POSTPAID-999",
+    "plan_name": "Rs 999 Postpaid Max",
+    "plan_type": "postpaid",
+    "price_rs": 999,
+    "data_per_month_gb": 300,
+    "calls": "Unlimited to all networks + 100 min international to 10 countries",
+    "sms_per_month": 100,
+    "5g_enabled": true,
+    "international_roaming": true,
+    "extras": [
+      "Bharti Connect TV",
+      "2 OTT subscriptions",
+      "Amazon Prime"
+    ],
+    "circle": "Maharashtra"
+  },
+  {
+    "plan_id": "PLN-POSTPAID-999",
+    "plan_name": "Rs 999 Postpaid Max",
+    "plan_type": "postpaid",
+    "price_rs": 999,
+    "data_per_month_gb": 300,
+    "calls": "Unlimited to all networks + 100 min international to 10 countries",
+    "sms_per_month": 100,
+    "5g_enabled": true,
+    "international_roaming": true,
+    "extras": [
+      "Bharti Connect TV",
+      "2 OTT subscriptions",
+      "Amazon Prime"
+    ],
+    "circle": "Karnataka"
+  },
+  {
+    "plan_id": "PLN-POSTPAID-999",
+    "plan_name": "Rs 999 Postpaid Max",
+    "plan_type": "postpaid",
+    "price_rs": 999,
+    "data_per_month_gb": 300,
+    "calls": "Unlimited to all networks + 100 min international to 10 countries",
+    "sms_per_month": 100,
+    "5g_enabled": true,
+    "international_roaming": true,
+    "extras": [
+      "Bharti Connect TV",
+      "2 OTT subscriptions",
+      "Amazon Prime"
+    ],
+    "circle": "Delhi"
+  }
+]

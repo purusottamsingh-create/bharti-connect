@@ -1,42 +1,59 @@
-# Bharti Connect API
+# Bharti Connect — Billing API & Knowledge Base
 
-A FastAPI backend application providing mock billing data, configured for easy deployment on Render.
+A production-ready FastAPI backend and premium Knowledge Base for telecom billing demonstrations.
 
-## Project Structure
+## 🚀 Key Features
+- **FastAPI Backend**: 7 modular endpoints for invoices, usage history, balance, activation logs, credits, and ticketing.
+- **Mock Data Baseline**: Pre-loaded with 12 months of history for multiple users, normalized to **May 2026**.
+- **Auto-Reset Logic**: Built-in state management (`seed.py`) that ensures a clean "Day 0" state on every restart.
+- **Premium Knowledge Base**: AI-crawlable, SEO-friendly HTML/CSS static site inspired by Airtel's design system.
+- **Production Ready**: Optimized for deployment on Render and exposure via ngrok.
 
-```
+## 📁 Project Structure
+```text
 bharti-connect-api/
 ├── app/
-│   ├── main.py          ← FastAPI app entry point
-│   ├── mock_data.py     ← 12 months of mock invoice data
+│   ├── main.py          # Entry point & static file mounting
+│   ├── seed.py          # Data seeding & reset logic
 │   └── routers/
-│       └── billing.py   ← GET /billing/invoices endpoint
-├── requirements.txt
-├── render.yaml          ← Render auto-deploy config
-└── README.md
+│       ├── crm.py       # Billing, Usage, Balance & Credit endpoints
+│       └── ticketing.py # Support ticket creation endpoints
+├── data/                # Persistent JSON storage (Auto-seeded)
+├── knowledge_base/      # Static HTML/CSS site (served at /kb)
+├── requirements.txt     # Python dependencies
+├── render.yaml          # Render deployment config
+└── runtime.txt          # Python version pinning (3.12.0)
 ```
 
-## Running Locally
+## 🛠️ Local Setup
 
-1. Setup a virtual environment (optional but recommended):
+1. **Clone & Navigate**:
    ```bash
-   python -m venv venv
-   source venv/bin/activate
+   git clone https://github.com/purusottamsingh-create/bharti-connect.git
+   cd bharti-connect
    ```
 
-2. Install dependencies:
+2. **Setup Environment**:
    ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    pip install -r requirements.txt
    ```
 
-3. Run the development server:
+3. **Run Server**:
    ```bash
    uvicorn app.main:app --reload
    ```
 
-4. View the interactive API documentation at:
-   [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+## 🌐 Access Points
+- **API Documentation**: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+- **Knowledge Base**: [http://127.0.0.1:8000/kb/](http://127.0.0.1:8000/kb/)
+- **Health Check**: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
-## Deployment
+## 🧪 Demo Data
+- **Test Mobile Numbers**: `9876543210`, `7406179387`, `9858509904`
+- **Baseline Date**: May 15, 2026
+- **Reset Trigger**: Simply restart the server to restore all JSON files to their original state.
 
-This project includes a `render.yaml` for automatic deployment to Render. Simply connect your GitHub repository to Render and it will automatically provision the service.
+## ☁️ Deployment
+This repository is pre-configured for **Render**. Connect your GitHub account and it will automatically build using the provided `render.yaml`.

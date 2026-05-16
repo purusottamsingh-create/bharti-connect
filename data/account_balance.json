@@ -1,17 +1,6 @@
 {
-  "9876543210": {
-    "current_balance": 1249.0,
-    "currency": "INR",
-    "last_payment": {
-      "amount": 699,
-      "date": "2026-04-04",
-      "method": "UPI"
-    },
-    "next_due_date": "2026-06-04",
-    "plan_name": "₹699 Postpaid Premium"
-  },
   "7406179387": {
-    "current_balance": 1249.0,
+    "current_balance": 950.0,
     "currency": "INR",
     "last_payment": {
       "amount": 699,
@@ -22,6 +11,17 @@
     "plan_name": "₹699 Postpaid Premium"
   },
   "9858509904": {
+    "current_balance": 849.0,
+    "currency": "INR",
+    "last_payment": {
+      "amount": 499,
+      "date": "2026-04-04",
+      "method": "UPI"
+    },
+    "next_due_date": "2026-06-04",
+    "plan_name": "₹499 Postpaid"
+  },
+  "9876543210": {
     "current_balance": 1249.0,
     "currency": "INR",
     "last_payment": {

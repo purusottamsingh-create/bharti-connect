@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from app.routers import crm, ticketing
+from app.routers import crm, ticketing, plan_advisor
 from app.seed import ensure_seed_data
 
 # Reset data to clean baseline on every startup
@@ -16,6 +16,7 @@ app = FastAPI(
     version="1.0.0",
 )
 
+app.include_router(plan_advisor.router)
 app.include_router(crm.router)
 app.include_router(ticketing.router)
 
