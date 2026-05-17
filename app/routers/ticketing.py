@@ -24,7 +24,7 @@ def _write_tickets(tickets: list):
         json.dump(tickets, f, indent=2, ensure_ascii=False)
 
 
-# ── 5. POST /ticketing/v1/tickets ─────────────────────────────────────────────
+# ── 6. POST /ticketing/v1/tickets ─────────────────────────────────────────────
 
 class TicketRequest(BaseModel):
     mobile_number: str
@@ -65,3 +65,12 @@ def create_ticket(body: TicketRequest):
         "assigned_team": "billing_ops",
         "created_at": now,
     }
+
+
+@router.get("/tickets", summary="get_all_tickets")
+def get_all_tickets():
+    """
+    Returns all tickets in the system.
+    """
+    return _read_tickets()
+

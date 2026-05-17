@@ -201,3 +201,28 @@ def add_account_note(mobile_number: str, body: AccountNoteRequest):
         "created_at": record["created_at"],
         "message": "Account note written successfully."
     }
+
+
+@router.get("/accounts/notes", summary="get_all_notes")
+def get_all_notes():
+    """
+    Returns all interaction notes across all accounts.
+    """
+    return _read("account_notes.json")
+
+
+@router.get("/accounts/plan-changes", summary="get_all_plan_changes")
+def get_all_plan_changes():
+    """
+    Returns all scheduled plan changes in the system.
+    """
+    return _read("plan_changes.json")
+
+
+@router.get("/accounts/plans", summary="get_all_plans")
+def get_all_plans():
+    """
+    Returns the current plans configuration for all customers.
+    """
+    return _read("current_plan.json")
+

@@ -227,9 +227,24 @@ SEED = {
         {"plan_id": "PLN-POSTPAID-999", "plan_name": "Rs 999 Postpaid Max", "plan_type": "postpaid", "price_rs": 999, "data_per_month_gb": 300, "calls": "Unlimited to all networks + 100 min international to 10 countries", "sms_per_month": 100, "5g_enabled": True, "international_roaming": True, "extras": ["Bharti Connect TV", "2 OTT subscriptions", "Amazon Prime"], "circle": "Karnataka"},
         {"plan_id": "PLN-POSTPAID-999", "plan_name": "Rs 999 Postpaid Max", "plan_type": "postpaid", "price_rs": 999, "data_per_month_gb": 300, "calls": "Unlimited to all networks + 100 min international to 10 countries", "sms_per_month": 100, "5g_enabled": True, "international_roaming": True, "extras": ["Bharti Connect TV", "2 OTT subscriptions", "Amazon Prime"], "circle": "Delhi"}
     ],
-    'account_notes.json': {},
+    'account_notes.json': {
+        '7406179387': [
+            {
+                'note_id': 'NOTE-20260517-001',
+                'created_at': '2026-05-17T17:56:05.032303Z',
+                'mobile_number': '7406179387',
+                'note': 'Recommended upgrade to Rs 999 plan as customer needs more international data.',
+                'note_type': 'advisory',
+                'outcome': 'completed',
+                'recommended_plan_id': 'PLN-POSTPAID-999',
+                'change_reference': 'REF123456',
+                'noted_by': 'Aarav'
+            }
+        ]
+    },
     'plan_changes.json': []
 }
+
 
 def ensure_seed_data(force=False):
     os.makedirs(DATA_DIR, exist_ok=True)

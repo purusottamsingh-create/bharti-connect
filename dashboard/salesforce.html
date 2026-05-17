@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salesforce Service Cloud - Customer CRM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="sf-theme">
+
+  <!-- Header console bar -->
+  <div class="sf-header-bar">
+    <div class="sf-logo-title" onclick="window.location.href='index.html'">
+      <div class="sf-logo-badge">CRM</div>
+      Salesforce Service Cloud
+    </div>
+    <div class="sf-header-nav">
+      <button class="sf-nav-btn active">Console</button>
+      <button class="sf-nav-btn" onclick="window.location.href='zendesk.html'">Tickets</button>
+      <button class="sf-nav-btn">Contacts</button>
+      <button class="sf-nav-btn">Analytics</button>
+    </div>
+  </div>
+
+  <!-- Salesforce Customer Tabs -->
+  <div class="sf-tab-strip">
+    <div class="sf-tab active" id="tab-7406179387" onclick="switchCustomer('7406179387')">
+      👤 Purusottam Singh
+    </div>
+    <div class="sf-tab" id="tab-9858509904" onclick="switchCustomer('9858509904')">
+      👤 Madhukar Rao
+    </div>
+    <div class="sf-tab" id="tab-9876543210" onclick="switchCustomer('9876543210')">
+      👤 Kavitha Nair
+    </div>
+  </div>
+
+  <!-- Main Dashboard Workspace -->
+  <div class="sf-workspace">
+    <!-- Left Profile 360 Pane -->
+    <div class="sf-profile-card">
+      <div class="sf-avatar-section">
+        <div class="sf-avatar" id="avatar-initials">PS</div>
+        <div>
+          <div class="sf-customer-name" id="cust-name">Purusottam Singh</div>
+          <span class="sf-customer-circle" id="cust-circle">Karnataka Circle</span>
+        </div>
+      </div>
+
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
+        <div class="sf-detail-row">
+          <span class="sf-detail-label">Mobile Number</span>
+          <span class="sf-detail-value" id="cust-mobile">-</span>
+        </div>
+        <div class="sf-detail-row">
+          <span class="sf-detail-label">Current Active Plan</span>
+          <span class="sf-detail-value" id="cust-plan" style="color: var(--sf-primary);">-</span>
+        </div>
+        <div class="sf-detail-row">
+          <span class="sf-detail-label">Monthly Price</span>
+          <span class="sf-detail-value" id="cust-price">-</span>
+        </div>
+        <div class="sf-detail-row">
+          <span class="sf-detail-label">Included Data</span>
+          <span class="sf-detail-value" id="cust-data">-</span>
+        </div>
+        <div class="sf-detail-row">
+          <span class="sf-detail-label">Voice / Calls</span>
+          <span class="sf-detail-value" id="cust-calls">-</span>
+        </div>
+        <div class="sf-detail-row">
+          <span class="sf-detail-label">SMS per Month</span>
+          <span class="sf-detail-value" id="cust-sms">-</span>
+        </div>
+        <div class="sf-detail-row">
+          <span class="sf-detail-label">Billing Date</span>
+          <span class="sf-detail-value" id="cust-billing-date">-</span>
+        </div>
+        <div class="sf-detail-row">
+          <span class="sf-detail-label">5G Status</span>
+          <span class="sf-detail-value" id="cust-5g" style="color: var(--sf-success);">-</span>
+        </div>
+      </div>
+
+      <!-- Scheduled Changes Banner -->
+      <div class="sf-alert-banner" id="scheduled-change-banner" style="display: none;">
+        <div class="sf-alert-title">Scheduled Action Pending</div>
+        <div class="sf-alert-msg" id="scheduled-change-text">Scheduled Upgrade to Rs 999 Postpaid Max effective 2026-06-04</div>
+      </div>
+    </div>
+
+    <!-- Right Interaction History Panel -->
+    <div class="sf-timeline-card">
+      <div class="sf-timeline-header">
+        Account Advisory History
+        <span class="sf-timeline-count" id="timeline-count">0 Notes</span>
+      </div>
+      
+      <div class="sf-timeline" id="timeline-container">
+        <!-- Rendered dynamically -->
+        <div style="padding: 20px; text-align: center; color: var(--sf-text-muted);">No advisory notes logged on this account.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let activeMobile = "7406179387";
+    let plansData = {};
+    let notesData = {};
+    let changesData = [];
+
+    async function loadCRMData() {
+      try {
+        // Parallel fetches for standard CRM information
+        const [plansRes, notesRes, changesRes] = await Promise.all([
+          fetch("/crm/v1/accounts/plans"),
+          fetch("/crm/v1/accounts/notes"),
+          fetch("/crm/v1/accounts/plan-changes")
+        ]);
+
+        plansData = await plansRes.json();
+        notesData = await notesRes.json();
+        changesData = await changesRes.json();
+
+        switchCustomer(activeMobile);
+      } catch (err) {
+        console.error("Error loading CRM records:", err);
+      }
+    }
+
+    function switchCustomer(mobile) {
+      activeMobile = mobile;
+
+      // Update active tabs
+      document.querySelectorAll(".sf-tab").forEach(tab => tab.classList.remove("active"));
+      const activeTab = document.getElementById(`tab-${mobile}`);
+      if (activeTab) activeTab.classList.add("active");
+
+      // Load Profile Banner Data
+      const c = plansData[mobile];
+      if (c) {
+        document.getElementById("cust-name").innerText = c.customer_name;
+        document.getElementById("cust-circle").innerText = `${c.circle} Circle`;
+        document.getElementById("cust-mobile").innerText = mobile;
+        document.getElementById("cust-plan").innerText = c.plan_name;
+        document.getElementById("cust-price").innerText = `₹${c.price_rs}/month`;
+        document.getElementById("cust-data").innerText = `${c.data_per_month_gb} GB`;
+        document.getElementById("cust-calls").innerText = c.calls;
+        document.getElementById("cust-sms").innerText = `${c.sms_per_month} / month`;
+        document.getElementById("cust-billing-date").innerText = `Day ${c.billing_date} of the month`;
+        document.getElementById("cust-5g").innerText = c['5g_enabled'] ? "Enabled (Unlimited 5G Data)" : "Disabled";
+
+        // Avatar initials
+
+        const parts = c.customer_name.split(" ");
+        const initials = parts.map(p => p[0]).join("").toUpperCase();
+        document.getElementById("avatar-initials").innerText = initials;
+      }
+
+      // Check for Pending Scheduled Migration
+      const pChange = changesData.find(x => x.mobile_number === mobile);
+      const banner = document.getElementById("scheduled-change-banner");
+      if (pChange) {
+        banner.style.display = "flex";
+        // Convert ID to a readable plan name (e.g. PLN-POSTPAID-999 -> Rs 999 Postpaid Max)
+        let newPlanName = pChange.new_plan_id;
+        if (newPlanName === "PLN-POSTPAID-999") newPlanName = "Rs 999 Postpaid Max";
+        else if (newPlanName === "PLN-POSTPAID-699") newPlanName = "Rs 699 Postpaid Premium";
+        else if (newPlanName === "PLN-POSTPAID-499") newPlanName = "Rs 499 Postpaid";
+        
+        document.getElementById("scheduled-change-text").innerHTML = 
+          `Scheduled Migration to <strong>${newPlanName}</strong> effective on <strong>${pChange.effective_date}</strong>.`;
+      } else {
+        banner.style.display = "none";
+      }
+
+      // Load Advisory Interaction Notes timeline
+      renderTimeline(mobile);
+    }
+
+    function renderTimeline(mobile) {
+      const container = document.getElementById("timeline-container");
+      const cNotes = notesData[mobile] || [];
+
+      // Sort timeline newest first
+      cNotes.sort((a,b) => b.created_at.localeCompare(a.created_at));
+
+      document.getElementById("timeline-count").innerText = `${cNotes.length} Note${cNotes.length !== 1 ? 's' : ''}`;
+
+      if (cNotes.length === 0) {
+        container.innerHTML = 
+          `<div style="padding: 40px; text-align: center; color: var(--sf-text-muted);">No interaction logs or plan recommendations logged for this account.</div>`;
+        return;
+      }
+
+      container.innerHTML = "";
+      cNotes.forEach(n => {
+        const item = document.createElement("div");
+        item.className = "sf-timeline-item";
+
+        // Format dates
+        const dateStr = new Date(n.created_at).toLocaleString();
+        
+        let notedBy = n.noted_by;
+        if (notedBy === "aarav_plan_advisor" || notedBy === "aarav") {
+          notedBy = "Aarav (Plan Advisor AI)";
+        } else {
+          notedBy = notedBy.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+        }
+
+        const noteType = n.note_type.replace(/_/g, " ");
+
+        item.innerHTML = `
+          <div class="sf-timeline-dot"></div>
+          <div class="sf-timeline-content">
+            <div class="sf-timeline-meta">
+              <span class="sf-timeline-type">${noteType}</span>
+              <span class="sf-timeline-date">${dateStr}</span>
+            </div>
+            <div class="sf-timeline-text">
+              ${n.note}
+            </div>
+            <div class="sf-timeline-footer">
+              <span>Outcome: <strong style="color: var(--sf-primary);">${n.outcome}</strong></span>
+              <span class="sf-timeline-author">Saved by: ${notedBy}</span>
+            </div>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    window.onload = loadCRMData;
+  </script>
+
+</body>
+</html>

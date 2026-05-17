@@ -2,14 +2,14 @@
   "7406179387": [
     {
       "note_id": "NOTE-20260517-001",
-      "created_at": "2026-05-17T02:34:47.925549Z",
+      "created_at": "2026-05-17T17:56:05.032303Z",
       "mobile_number": "7406179387",
-      "note": "Recommended upgrade to ₹999 Postpaid Max plan due to high data usage and significant excess charges (₹483.33 average per month). Customer agreed to switch. Plan change scheduled to take effect on 2026-06-04.",
-      "note_type": "plan_advisory",
-      "outcome": "scheduled_upgrade",
+      "note": "Recommended upgrade to Rs 999 plan as customer needs more international data.",
+      "note_type": "advisory",
+      "outcome": "completed",
       "recommended_plan_id": "PLN-POSTPAID-999",
-      "change_reference": "PLN-CHG-20260517-001",
-      "noted_by": "aarav_plan_advisor"
+      "change_reference": "REF123456",
+      "noted_by": "Aarav"
     }
   ]
 }

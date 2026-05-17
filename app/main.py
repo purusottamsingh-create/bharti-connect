@@ -23,6 +23,10 @@ app.include_router(ticketing.router)
 # Serve the Knowledge Base static files
 app.mount("/kb", StaticFiles(directory="knowledge_base", html=True), name="kb")
 
+# Serve the Demo Verification Dashboard static files
+app.mount("/dashboard", StaticFiles(directory="dashboard", html=True), name="dashboard")
+
+
 
 @app.get("/", tags=["Health"])
 def health_check():

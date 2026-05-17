@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zendesk Support Desk - Billing Tickets</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="zd-container">
+    <!-- Left Navigation Bar -->
+    <div class="zd-sidebar">
+      <div class="zd-logo" onclick="window.location.href='index.html'">Z</div>
+      <div class="zd-nav-icon active">🎫</div>
+      <div class="zd-nav-icon">📊</div>
+      <div class="zd-nav-icon">⚙️</div>
+    </div>
+
+    <!-- Middle Ticket Queue Panel -->
+    <div class="zd-queue-panel">
+      <div class="zd-panel-header">
+        <h2>Unsolved Tickets</h2>
+        <div class="zd-panel-subheader">Billing Operations Queue &bull; <span id="ticket-count">0</span> tickets</div>
+      </div>
+      <div class="zd-ticket-list" id="ticket-list-container">
+        <!-- Rendered dynamically -->
+        <div style="padding: 20px; text-align: center; color: var(--zd-text-muted);">Loading tickets...</div>
+      </div>
+    </div>
+
+    <!-- Right Detail Pane -->
+    <div class="zd-detail-pane" id="detail-pane-container">
+      <div class="zd-detail-header">
+        <div>
+          <div class="zd-header-subject" id="det-subject">Select a ticket from the queue</div>
+          <div class="zd-header-customer" id="det-customer">No ticket active</div>
+        </div>
+        <div id="det-header-pill"></div>
+      </div>
+
+      <div class="zd-detail-body">
+        <div class="zd-card">
+          <div class="zd-card-title">Ticket Information</div>
+          <div class="zd-grid-fields">
+            <div class="zd-field">
+              <span class="zd-field-label">Ticket ID</span>
+              <span class="zd-field-value" id="det-id">-</span>
+            </div>
+            <div class="zd-field">
+              <span class="zd-field-label">Priority</span>
+              <span class="zd-field-value" id="det-priority">-</span>
+            </div>
+            <div class="zd-field">
+              <span class="zd-field-label">Customer Mobile</span>
+              <span class="zd-field-value" id="det-mobile">-</span>
+            </div>
+            <div class="zd-field">
+              <span class="zd-field-label">Raised By Agent</span>
+              <span class="zd-field-value" id="det-agent">-</span>
+            </div>
+            <div class="zd-field">
+              <span class="zd-field-label">Created Time</span>
+              <span class="zd-field-value" id="det-created">-</span>
+            </div>
+            <div class="zd-field">
+              <span class="zd-field-label">Status</span>
+              <span class="zd-field-value" id="det-status">-</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="zd-card">
+          <div class="zd-card-title">Billing Resolution Audit</div>
+          <div class="zd-grid-fields" style="grid-template-columns: 1fr;">
+            <div class="zd-field">
+              <span class="zd-field-label">Issue Summary</span>
+              <span class="zd-field-value" id="det-summary" style="font-weight: 400; line-height: 1.5;">-</span>
+            </div>
+            <div class="zd-field" style="margin-top: 15px;">
+              <span class="zd-field-label">Root Cause Identified</span>
+              <span class="zd-field-value" id="det-cause" style="font-weight: 600; color: var(--zd-pill-open);">-</span>
+            </div>
+          </div>
+
+          <div class="zd-outcome-box">
+            <div class="zd-outcome-title">Resolution Actions & Credits Applied</div>
+            <div class="zd-outcome-text" id="det-action">-</div>
+            <div style="margin-top: 10px; font-weight: 700; color: var(--zd-pill-solved); font-size: 14px;" id="det-credit-waiver">
+              Credit Amount: ₹0.00 (Credit Reference: -)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let ticketsData = [];
+
+    async function loadTickets() {
+      try {
+        const response = await fetch("/ticketing/v1/tickets");
+        if (!response.ok) throw new Error("Failed to fetch tickets");
+        ticketsData = await response.json();
+        
+        // Sort descending by created_at or ticket_id sequence
+        ticketsData.sort((a, b) => b.ticket_id.localeCompare(a.ticket_id));
+
+        document.getElementById("ticket-count").innerText = ticketsData.length;
+        renderTicketList();
+
+        if (ticketsData.length > 0) {
+          selectTicket(ticketsData[0].ticket_id);
+        } else {
+          showEmptyState();
+        }
+      } catch (err) {
+        console.error(err);
+        document.getElementById("ticket-list-container").innerHTML = 
+          `<div style="padding: 20px; text-align: center; color: var(--zd-pill-open);">Error loading tickets. Please check server connection.</div>`;
+      }
+    }
+
+    function renderTicketList() {
+      const container = document.getElementById("ticket-list-container");
+      container.innerHTML = "";
+
+      ticketsData.forEach(t => {
+        const statusClass = `zd-status-${t.resolution_status.toLowerCase()}`;
+        const item = document.createElement("div");
+        item.className = "zd-ticket-item";
+        item.id = `t-item-${t.ticket_id}`;
+        item.onclick = () => selectTicket(t.ticket_id);
+
+        item.innerHTML = `
+          <div class="zd-ticket-meta">
+            <span class="zd-ticket-id">${t.ticket_id}</span>
+            <span class="zd-ticket-status ${statusClass}">${t.resolution_status}</span>
+          </div>
+          <div class="zd-ticket-subject">${t.issue_summary}</div>
+          <div class="zd-ticket-preview">${t.action_taken}</div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    function selectTicket(id) {
+      // Clear active styles
+      document.querySelectorAll(".zd-ticket-item").forEach(el => el.classList.remove("active"));
+      
+      const item = document.getElementById(`t-item-${id}`);
+      if (item) item.classList.add("active");
+
+      const t = ticketsData.find(x => x.ticket_id === id);
+      if (!t) return;
+
+      // Populate text fields
+      document.getElementById("det-subject").innerText = t.issue_summary;
+      document.getElementById("det-customer").innerText = `Requester Mobile: ${t.mobile_number}`;
+      document.getElementById("det-id").innerText = t.ticket_id;
+      
+      // Formatting priority
+      const p = t.priority.charAt(0).toUpperCase() + t.priority.slice(1);
+      document.getElementById("det-priority").innerText = p;
+      document.getElementById("det-mobile").innerText = t.mobile_number;
+
+      // Clean Raised By names
+      let raisedBy = t.raised_by;
+      if (raisedBy === "aarav_billing_agent" || raisedBy === "aarav") {
+        raisedBy = "Aarav (AI Specialist)";
+      } else {
+        raisedBy = raisedBy.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      }
+      document.getElementById("det-agent").innerText = raisedBy;
+
+      // Local Date/Time display
+      const cDate = new Date(t.created_at);
+      document.getElementById("det-created").innerText = cDate.toLocaleString();
+      
+      const stat = t.resolution_status.charAt(0).toUpperCase() + t.resolution_status.slice(1);
+      document.getElementById("det-status").innerText = stat;
+
+      document.getElementById("det-summary").innerText = t.issue_summary;
+      
+      const cause = t.root_cause.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      document.getElementById("det-cause").innerText = cause;
+      
+      document.getElementById("det-action").innerText = t.action_taken;
+
+      if (t.credit_amount > 0) {
+        document.getElementById("det-credit-waiver").style.display = "block";
+        document.getElementById("det-credit-waiver").innerText = `Credit Amount: ₹${t.credit_amount} (Reference ID: ${t.credit_id || 'N/A'})`;
+      } else {
+        document.getElementById("det-credit-waiver").style.display = "none";
+      }
+
+      // Update right-hand top status badge
+      const statusClass = `zd-status-${t.resolution_status.toLowerCase()}`;
+      document.getElementById("det-header-pill").innerHTML = 
+        `<span class="zd-ticket-status ${statusClass}" style="padding: 6px 12px; font-size: 12px; border-radius: 4px;">${t.resolution_status}</span>`;
+    }
+
+    function showEmptyState() {
+      document.getElementById("ticket-list-container").innerHTML = 
+        `<div style="padding: 40px 20px; text-align: center; color: var(--zd-text-muted);">No tickets raised in queue.</div>`;
+      document.getElementById("detail-pane-container").style.display = "none";
+    }
+
+    window.onload = loadTickets;
+  </script>
+
+</body>
+</html>

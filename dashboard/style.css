@@ -1,0 +1,675 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   1. CORE DESIGN SYSTEM & FOUNDATIONAL STYLES
+   ========================================================================== */
+:root {
+  /* Common Variables */
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-header: 'Outfit', sans-serif;
+  --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --border-radius-sm: 6px;
+  --border-radius-md: 10px;
+  --border-radius-lg: 16px;
+  --box-shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+  /* Zendesk Specific HSL Colors */
+  --zd-primary: #03363d;
+  --zd-primary-light: #174f56;
+  --zd-accent: #1f73b7;
+  --zd-bg-canvas: #f5f7f8;
+  --zd-bg-card: #ffffff;
+  --zd-border: #d8dcde;
+  --zd-text-main: #2f3941;
+  --zd-text-muted: #68737d;
+  --zd-pill-new: #ffd43f;
+  --zd-pill-open: #ec407a;
+  --zd-pill-solved: #2e7d32;
+  --zd-pill-pending: #1e88e5;
+
+  /* Salesforce Specific HSL Colors */
+  --sf-primary: #0176d3;
+  --sf-primary-hover: #014486;
+  --sf-accent: #1b96ff;
+  --sf-bg-canvas: #b0c4de;
+  --sf-bg-panel: #f3f3f3;
+  --sf-bg-card: #ffffff;
+  --sf-border: #dddbda;
+  --sf-text-main: #181818;
+  --sf-text-muted: #444444;
+  --sf-success: #2e7d32;
+  --sf-warning: #fe9339;
+  --sf-danger: #ea001e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--zd-bg-canvas);
+  color: var(--zd-text-main);
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   2. ZENDESK SERVICE DESK THEME
+   ========================================================================== */
+.zd-container {
+  display: grid;
+  grid-template-columns: 60px 320px 1fr;
+  height: 100vh;
+  background-color: var(--zd-bg-canvas);
+}
+
+/* Left Navigation Sidebar */
+.zd-sidebar {
+  background-color: var(--zd-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  gap: 25px;
+  border-right: 1px solid rgba(0,0,0,0.1);
+  z-index: 10;
+}
+.zd-logo {
+  font-family: var(--font-header);
+  font-weight: 700;
+  font-size: 22px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.zd-nav-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.75);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+.zd-nav-icon.active, .zd-nav-icon:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+/* Middle Ticket Queue Panel */
+.zd-queue-panel {
+  background-color: var(--zd-bg-card);
+  border-right: 1px solid var(--zd-border);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.zd-panel-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--zd-border);
+}
+.zd-panel-header h2 {
+  font-family: var(--font-header);
+  font-size: 18px;
+  color: var(--zd-primary);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.zd-panel-subheader {
+  font-size: 12px;
+  color: var(--zd-text-muted);
+}
+.zd-ticket-list {
+  flex: 1;
+  overflow-y: auto;
+}
+.zd-ticket-item {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--zd-border);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border-left: 3px solid transparent;
+}
+.zd-ticket-item:hover {
+  background-color: #f8fafb;
+}
+.zd-ticket-item.active {
+  background-color: #edf5f7;
+  border-left-color: var(--zd-accent);
+}
+.zd-ticket-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.zd-ticket-id {
+  color: var(--zd-accent);
+}
+.zd-ticket-status {
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 700;
+}
+.zd-status-new { background-color: var(--zd-pill-new); color: #000000; }
+.zd-status-open { background-color: var(--zd-pill-open); }
+.zd-status-solved { background-color: var(--zd-pill-solved); }
+.zd-status-pending { background-color: var(--zd-pill-pending); }
+
+.zd-ticket-subject {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--zd-text-main);
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.zd-ticket-preview {
+  font-size: 12px;
+  color: var(--zd-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Right Detail Pane */
+.zd-detail-pane {
+  background-color: var(--zd-bg-canvas);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.zd-detail-header {
+  background-color: var(--zd-bg-card);
+  padding: 20px 30px;
+  border-bottom: 1px solid var(--zd-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.zd-header-subject {
+  font-family: var(--font-header);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--zd-primary);
+  margin-bottom: 5px;
+}
+.zd-header-customer {
+  font-size: 13px;
+  color: var(--zd-text-muted);
+}
+.zd-detail-body {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.zd-card {
+  background-color: var(--zd-bg-card);
+  border: 1px solid var(--zd-border);
+  border-radius: var(--border-radius-md);
+  padding: 24px;
+  box-shadow: var(--box-shadow-subtle);
+}
+.zd-card-title {
+  font-family: var(--font-header);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--zd-primary);
+  border-bottom: 1px solid var(--zd-border);
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+.zd-grid-fields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.zd-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.zd-field-label {
+  font-size: 12px;
+  color: var(--zd-text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.zd-field-value {
+  font-size: 14px;
+  color: var(--zd-text-main);
+  font-weight: 500;
+}
+.zd-outcome-box {
+  background-color: #fdfaf2;
+  border-left: 4px solid #f5b041;
+  border-radius: 4px;
+  padding: 16px;
+  margin-top: 15px;
+}
+.zd-outcome-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #b7950b;
+  margin-bottom: 6px;
+}
+.zd-outcome-text {
+  font-size: 13px;
+  color: #5d6d7e;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   3. SALESFORCE SERVICE CLOUD CRM THEME
+   ========================================================================== */
+.sf-theme {
+  background-color: var(--sf-bg-canvas);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.sf-header-bar {
+  background-color: #0d1b2a;
+  color: #ffffff;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--sf-accent);
+}
+.sf-logo-title {
+  font-family: var(--font-header);
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sf-logo-badge {
+  background-color: var(--sf-accent);
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.sf-header-nav {
+  display: flex;
+  gap: 20px;
+}
+.sf-nav-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: var(--transition-smooth);
+}
+.sf-nav-btn.active, .sf-nav-btn:hover {
+  color: #ffffff;
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* Salesforce Customer Tabs Selector */
+.sf-tab-strip {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--sf-border);
+  padding: 8px 24px 0 24px;
+  display: flex;
+  gap: 5px;
+}
+.sf-tab {
+  padding: 12px 24px;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--sf-text-muted);
+  cursor: pointer;
+  background-color: #f9f9f9;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sf-tab:hover {
+  background-color: #f1f1f1;
+  color: var(--sf-primary);
+}
+.sf-tab.active {
+  background-color: #ffffff;
+  border-color: var(--sf-border);
+  color: var(--sf-primary);
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+  position: relative;
+  z-index: 2;
+}
+.sf-tab.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--sf-accent);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+/* Main Dashboard Workspace */
+.sf-workspace {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+  background-color: #f3f3f3;
+}
+
+/* Left Profile 360 Card */
+.sf-profile-card {
+  background-color: #ffffff;
+  border: 1px solid var(--sf-border);
+  border-radius: var(--border-radius-sm);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+.sf-avatar-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid var(--sf-border);
+  padding-bottom: 20px;
+}
+.sf-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--sf-accent), var(--sf-primary-hover));
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-header);
+  font-size: 24px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(1, 118, 211, 0.2);
+}
+.sf-customer-name {
+  font-family: var(--font-header);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--sf-text-main);
+  margin-bottom: 4px;
+}
+.sf-customer-circle {
+  font-size: 12px;
+  color: var(--sf-text-muted);
+  background-color: #eef4f9;
+  padding: 2px 8px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.sf-detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed #e5e5e5;
+  font-size: 13px;
+}
+.sf-detail-label {
+  color: var(--sf-text-muted);
+  font-weight: 500;
+}
+.sf-detail-value {
+  color: var(--sf-text-main);
+  font-weight: 600;
+}
+
+/* Salesforce Live Alert Notification */
+.sf-alert-banner {
+  background-color: #fff8eb;
+  border: 1px solid #ffe8c5;
+  border-left: 4px solid var(--sf-warning);
+  border-radius: 4px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(254, 147, 57, 0.05);
+}
+.sf-alert-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #a04000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.sf-alert-msg {
+  font-size: 13px;
+  color: #5e3a00;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Activity Timeline Component */
+.sf-timeline-card {
+  background-color: #ffffff;
+  border: 1px solid var(--sf-border);
+  border-radius: var(--border-radius-sm);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+.sf-timeline-header {
+  font-family: var(--font-header);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--sf-text-main);
+  border-bottom: 1px solid var(--sf-border);
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sf-timeline-count {
+  background-color: var(--sf-accent);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+.sf-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  padding-left: 20px;
+}
+.sf-timeline::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 5px;
+  width: 2px;
+  background-color: var(--sf-border);
+}
+.sf-timeline-item {
+  position: relative;
+}
+.sf-timeline-dot {
+  position: absolute;
+  left: -20px;
+  top: 12px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--sf-accent);
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 2px var(--sf-accent);
+}
+.sf-timeline-content {
+  background-color: #f9f9f9;
+  border: 1px solid var(--sf-border);
+  border-radius: 6px;
+  padding: 16px;
+  transition: var(--transition-smooth);
+}
+.sf-timeline-content:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-color: rgba(1, 118, 211, 0.4);
+}
+.sf-timeline-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.sf-timeline-type {
+  color: var(--sf-primary);
+  text-transform: uppercase;
+}
+.sf-timeline-date {
+  color: var(--sf-text-muted);
+}
+.sf-timeline-text {
+  font-size: 13px;
+  color: #333333;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.sf-timeline-footer {
+  font-size: 11px;
+  color: var(--sf-text-muted);
+  border-top: 1px solid #eef0f2;
+  padding-top: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+.sf-timeline-author {
+  font-weight: 600;
+}
+
+/* Portal Landing/Gateway Entry */
+.gateway-body {
+  background: radial-gradient(circle at 10% 20%, rgb(4, 21, 45) 0%, rgb(26, 45, 76) 90%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.gateway-title {
+  font-family: var(--font-header);
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.gateway-subtitle {
+  font-size: 15px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 40px;
+  text-align: center;
+}
+.gateway-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 340px);
+  gap: 30px;
+}
+.gateway-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--border-radius-lg);
+  padding: 30px;
+  text-decoration: none;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+.gateway-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+.gateway-card-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.gateway-card-title {
+  font-family: var(--font-header);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+.gateway-card-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.5;
+}
+.gateway-system-tag {
+  margin-top: 15px;
+  font-size: 11px;
+  background-color: var(--sf-accent);
+  color: #ffffff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.gateway-system-tag.zd {
+  background-color: #03363d;
+}

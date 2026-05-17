@@ -12,19 +12,5 @@
     "priority": "low",
     "resolution_status": "resolved",
     "raised_by": "aarav_billing_agent"
-  },
-  {
-    "ticket_id": "BTC-88104",
-    "created_at": "2026-05-16T20:55:32Z",
-    "mobile_number": "7406179387",
-    "type": "billing_dispute",
-    "issue_summary": "SAARC roaming pack auto-activated in error. Customer was in the city, not abroad.",
-    "root_cause": "system_auto_activation_error",
-    "action_taken": "Applied ₹299 credit for incorrectly activated SAARC roaming pack. Revised outstanding balance: ₹950.",
-    "credit_amount": 299.0,
-    "credit_id": "CRD-33821",
-    "priority": "medium",
-    "resolution_status": "resolved",
-    "raised_by": "aarav_billing_agent"
   }
 ]
